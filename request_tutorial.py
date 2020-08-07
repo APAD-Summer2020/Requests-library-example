@@ -22,6 +22,17 @@ response = requests.get(
 #prints our the request url to see if we match the api requirements
 print(response.url)
 
-#prints our parsed result 
+#prints our parsed result, specifying that we want the name of the Pokemon
 print(response.json()['name'])
 
+#prints our parsed result, specifying that we want the -name- of the -move- that is -8- in the index of -moves-
+print(response.json()["moves"][8]["move"]["name"])
+#this was challenging to come up with randomly, so it was helpful to view the response in json form using <response.json()> to
+#view the response format as we added each tag to the end.
+
+#to better visualize this narrowing of the scope, try:
+#print(response.json())
+#print(response.json()["moves"]
+#print(response.json()["moves"][8]
+#print(response.json()["moves"][8]["move"]
+#print(response.json()["moves"][8]["move"]["name"]
